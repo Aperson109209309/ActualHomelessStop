@@ -1,8 +1,10 @@
 """
 Definition of models.
 """
-# appname/models.py
+#appname/models.py
+
 from django.db import models
+
 class Nonprofit(models.Model):
     # Define fields for the Donor model
     first_name = models.CharField(max_length=50)

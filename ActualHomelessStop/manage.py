@@ -8,11 +8,11 @@ Command-line utility for administrative tasks.
 
 import os
 import sys
-#from django.contrib import admin
-#from .models import Nonprofit
+# from django.contrib import admin
+# from app import models
 
 
-#admin.site.register(Nonprofit)
+# admin.site.register(models.Nonprofit)
 
 if __name__ == '__main__':
     os.environ.setdefault(
