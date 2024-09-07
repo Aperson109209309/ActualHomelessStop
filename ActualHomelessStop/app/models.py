@@ -1,10 +1,6 @@
 """
 Definition of models.
 """
-
-from django.db import models
-import sqlite3
-
 # appname/models.py
 from django.db import models
 class Nonprofit(models.Model):
