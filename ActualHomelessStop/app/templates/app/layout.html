@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" defer="defer" charset="utf-8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js">
+    </script>
 </head>
 
 <body>
@@ -44,7 +52,7 @@
     <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
     <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
     <script src="{% static 'app/scripts/respond.js' %}"></script>
-{% block scripts %}{% endblock %}
+    {% block scripts %}{% endblock %}
 
-</body>
+    </body>
 </html>

@@ -6,6 +6,8 @@ from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
 
+from app.models import Nonprofit
+
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -43,9 +45,11 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
 def nonprofitlist(request):
-    """Renders the about page."""
+    """Renders the nonprofit list page."""
     assert isinstance(request, HttpRequest)
+    nonprofits = Nonprofit.objects.all()
     return render(
         request,
         'app/nonprofitlist.html',
@@ -53,6 +57,7 @@ def nonprofitlist(request):
             'title':'Nonprofit list',
             'message':'Your application description page.',
             'year':datetime.now().year,
+            'nonprofits':nonprofits,
         }
     )
 
