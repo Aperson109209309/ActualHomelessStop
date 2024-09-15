@@ -9,13 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
     <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
     <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <!-- jQuery -->
-    <script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-3.6.0.min.js">
-    </script>
-    <!-- DataTables JS -->
-    <script type="text/javascript" defer="defer" charset="utf-8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js">
-    </script>
+ <!--<script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-3.7.1.min.js">-->
+   <!-- </script>-->
 </head>
 
 <body>
@@ -42,8 +39,8 @@
     </div>
 
     <div class="container body-content">
-{% block content %}{% endblock %}
-        <hr/>
+        {% block content %}{% endblock %}
+        <hr />
         <footer>
             <p> {{ year }} - Homeless Stop</p>
         </footer>
@@ -53,6 +50,12 @@
     <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
     <script src="{% static 'app/scripts/respond.js' %}"></script>
     {% block scripts %}{% endblock %}
-
-    </body>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js">
+</script>
+    <script>
+        $(document).ready(function() {
+            $('#nonprofitTable').DataTable();
+        });
+    </script>
+</body>
 </html>

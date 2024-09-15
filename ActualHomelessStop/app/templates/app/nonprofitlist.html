@@ -5,32 +5,34 @@
 <h2>{{ title }}</h2>
 <h3>Nonprofits near you (Greater Pheonix Area)</h3>
 <table id="nonprofitTable" class="table">
-    <tr>
-        <th> Name </th>
-        <th> Category</th>
-        <th> City </th>
-        <th> Zip Code </th>
-    </tr>
-    {% for nonprofit in nonprofits %}
-    <tr>
-        <td class="col-1">
-            {{ nonprofit.name }}
-        </td>
-        <td class="col-1">
-            {{ nonprofit.type }}
-        </td>
-        <td class="col-1">
-            {{ nonprofit.city }}
-        </td>
-        <td class="col-1">
-            {{ nonprofit.zip_code }}
-        </td>
-    </tr>
-    {% endfor %}
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Category</th>
+            <th> City </th>
+            <th> Zip Code </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for nonprofit in nonprofits %}
+        <tr>
+            <td class="col-1">
+                {{ nonprofit.name }}
+            </td>
+            <td class="col-1">
+                {{ nonprofit.type }}
+            </td>
+            <td class="col-1">
+                {{ nonprofit.city }}
+            </td>
+            <td class="col-1">
+                {{ nonprofit.zip_code }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
-<script type="text/javascript" charset="utf-8">
-    $(document).ready(function () {
-        $('#nonprofitTable').DataTable();
-    });
-</script>
-{% endblock %}
+<!-- DataTables JS -->
+
+
+    {% endblock %}
