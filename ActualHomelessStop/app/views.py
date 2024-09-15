@@ -67,10 +67,10 @@ def nonprofitdetails(request):
     nonprofits = Nonprofit.objects.all()
     return render(
         request,
-        'app/about.html',
+        'app/nonprofitdetails.html',
         {
             'title':'Nonprofit Details (CHANGE TO NONPROFIT NAME)',
-            'message':'Your application description page. (CHANGE TO NONPROFIT DESCRIPTION OR SMTH ELSE',
+            'message':'Your application description page. (CHANGE TO NONPROFIT CATEGORY',
             'year':datetime.now().year,
         }
     )
