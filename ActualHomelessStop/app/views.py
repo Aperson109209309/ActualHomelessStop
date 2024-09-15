@@ -3,7 +3,7 @@ Definition of views.
 """
 
 from datetime import datetime
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpRequest
 
 from app.models import Nonprofit
@@ -61,10 +61,11 @@ def nonprofitlist(request):
         }
     )
 
-def nonprofitdetails(request):
+def nonprofitdetails(request, id):
     """Renders the nonprofit details page."""
     assert isinstance(request, HttpRequest)
-    nonprofits = Nonprofit.objects.all()
+    # nonprofits = Nonprofit.objects.all()
+    object = get_object_or_404(Nonprofit,id = id)
     return render(
         request,
         'app/nonprofitdetails.html',
@@ -72,5 +73,6 @@ def nonprofitdetails(request):
             'title':'Nonprofit Details (CHANGE TO NONPROFIT NAME)',
             'message':'Your application description page. (CHANGE TO NONPROFIT CATEGORY',
             'year':datetime.now().year,
+            'object': object 
         }
     )

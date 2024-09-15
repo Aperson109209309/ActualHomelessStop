@@ -17,7 +17,7 @@
         {% for nonprofit in nonprofits %}
         <tr>
             <td class="col-1">
-                {{ nonprofit.name }}
+               <a href="nonprofitdetails/{{nonprofit.id}}"> {{ nonprofit.name }} </a>
             </td>
             <td class="col-1">
                 {{ nonprofit.type }}
