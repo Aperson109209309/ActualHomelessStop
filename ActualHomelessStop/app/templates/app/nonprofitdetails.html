@@ -2,18 +2,19 @@
 
 {% block content %}
 
-<h2>{{ title }}</h2>
-<h3>{{ message }}</h3>
+<h2>{{ object.name }}</h2>
 
-<p>{{ object.name }}</p>
+<h3>Category: {{ object.type }}</h3>
 
-<p>{{ object.website }} </p>
+<p>Replace with Nonprofit Description once we add that</p>
 
-<p>{{ object.phone_number }} </p>
+<p>Website: {{ object.website }} </p>
 
-<p>{{ object.email}} </p>
+<p>Phone Number: {{ object.phone_number }} </p>
 
-<p>{{ object.adress}} </p>
+<p>Email Address: {{ object.email }} </p>
+
+<p>Address: {{ object.address }} <br /> {{ object.city }}, {{object.state }} {{ object.zip_code }}</p>
 
 <!-- add links to donate/volunteer -->
 
