@@ -54,7 +54,7 @@ def nonprofitlist(request):
         request,
         'app/nonprofitlist.html',
         {
-            'title':'Nonprofit list',
+            'title':'Nonprofit List',
             'message':'Your application description page.',
             'year':datetime.now().year,
             'nonprofits':nonprofits,
@@ -67,11 +67,10 @@ def nonprofitdetails(request):
     nonprofits = Nonprofit.objects.all()
     return render(
         request,
-        'app/nonprofitlist.html',
+        'app/about.html',
         {
-            'title':'Nonprofit Details',
-            'message':'Your application description page.',
+            'title':'Nonprofit Details (CHANGE TO NONPROFIT NAME)',
+            'message':'Your application description page. (CHANGE TO NONPROFIT DESCRIPTION OR SMTH ELSE',
             'year':datetime.now().year,
-            'nonprofits':nonprofits,
         }
     )
