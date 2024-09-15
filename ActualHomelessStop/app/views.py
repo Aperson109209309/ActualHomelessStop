@@ -61,3 +61,17 @@ def nonprofitlist(request):
         }
     )
 
+def nonprofitdetails(request):
+    """Renders the nonprofit details page."""
+    assert isinstance(request, HttpRequest)
+    nonprofits = Nonprofit.objects.all()
+    return render(
+        request,
+        'app/nonprofitlist.html',
+        {
+            'title':'Nonprofit Details',
+            'message':'Your application description page.',
+            'year':datetime.now().year,
+            'nonprofits':nonprofits,
+        }
+    )

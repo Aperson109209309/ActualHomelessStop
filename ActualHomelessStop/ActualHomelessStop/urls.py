@@ -14,6 +14,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('about', views.about, name='about'),
     path('nonprofitlist', views.nonprofitlist, name='nonprofitlist'),
+    path('nonprofitdetails', views.nonprofitdetails, name='nonprofitdetails'),
     path('login',
          LoginView.as_view
          (
