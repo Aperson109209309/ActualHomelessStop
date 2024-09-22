@@ -2,19 +2,38 @@
 
 {% block content %}
 
-<h2>{{ object.name }}</h2>
+<h1>{{ object.name }}</h1>
 
 <h3>Category: {{ object.type }}</h3>
 
+
+<table id="nonprofitsdetailstable" class="table">
+    <thead>
+        <tr>
+             <th>Website</th>
+             <th>Phone Number</th>
+             <th>E-mail</th>
+             <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col-1">
+                <a href="{{object.website}}"> {{ object.website }} </a>
+            </td>
+            <td class="col-1">
+                <p>{{ object.phone_number }} </p>
+            </td>
+            <td class="col-1">
+                <p>{{ object.email }} </p>
+            </td>
+            <td class="col-1">
+                <p>{{ object.address }} <br />{{ object.city }}, {{object.state }} {{ object.zip_code }}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <p>Replace with Nonprofit Description once we add that</p>
-
-<p>Website: {{ object.website }} </p>
-
-<p>Phone Number: {{ object.phone_number }} </p>
-
-<p>Email Address: {{ object.email }} </p>
-
-<p>Address: {{ object.address }} <br /> {{ object.city }}, {{object.state }} {{ object.zip_code }}</p>
 
 <!-- add links to donate/volunteer -->
 
