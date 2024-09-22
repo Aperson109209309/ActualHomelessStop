@@ -76,3 +76,15 @@ def nonprofitdetails(request, id):
             'object': object 
         }
     )
+def infonotprovided(request):
+    """Renders the info not found page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/infonotprovided.html',
+        {
+            'title':"Info Not Provided ",
+            'message':'',
+            'year':datetime.now().year,
+        }
+    )
