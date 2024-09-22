@@ -17,6 +17,9 @@ class Nonprofit(models.Model):
     zip_code = models.CharField(max_length=10, blank=True, null=True)
     country = models.CharField(max_length=100, blank=True, null=True)
     website = models.CharField(max_length=100, blank=True, null=True)
+    donation_link = models.CharField(max_length=100, blank=True, null=True)
+    volunteer_link = models.CharField(max_length=100, blank=True, null=True)
+    newspaper_signup = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
