@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
+from msilib.schema import Media
 import os
 import posixpath
 
@@ -111,3 +112,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['media']))
