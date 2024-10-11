@@ -3,8 +3,16 @@ Definition of views.
 """
 
 from datetime import datetime
+from sys import exception
+from telnetlib import STATUS
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpRequest
+from django.shortcuts import render
+from .service.openai_service import get_openai_response
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 from app.models import Nonprofit
 
@@ -88,3 +96,15 @@ def infonotprovided(request):
             'year':datetime.now().year,
         }
     )
+@csrf_exempt 
+def openai_view(request):
+    if request.method == 'POST':
+        try:
+            user_input = request.POST.get('user_input', '')
+            response_text = get_openai_response(user_input)
+        
+            return JsonResponse({"status":"success","message":response_text},STATUS=200)  
+        except Exception as e:
+            return JsonResponse({"status":"error","message":str(e)},STATUS=500)
+     #  return render(request, 'openai_form.html')
+    return JsonResponse({"status":"error","message":"Invalid request"},STATUS=400)

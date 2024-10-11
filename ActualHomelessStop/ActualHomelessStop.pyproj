@@ -38,6 +38,7 @@
     <Compile Include="app\forms.py" />
     <Compile Include="app\migrations\0001_initial.py" />
     <Compile Include="app\models.py" />
+    <Compile Include="app\service\openai_service.py" />
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
@@ -53,6 +54,7 @@
     <Folder Include="app\media\images\" />
     <Folder Include="app\migrations\" />
     <Folder Include="app\media\" />
+    <Folder Include="app\service\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
     <Folder Include="app\static\app\content\" />
