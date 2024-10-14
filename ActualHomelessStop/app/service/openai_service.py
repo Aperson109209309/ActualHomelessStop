@@ -4,16 +4,46 @@ from django.conf import settings
 from app import views
    
    # Set the OpenAI API key
-openai.api_key = "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"
+openai.api_key = settings.OPENAI_API_KEY
 def get_openai_response(prompt):
      try:
            # Send a request to the OpenAI API
-           response = openai.Completion.create(
-               engine="gpt-4",  # or "gpt-4" for GPT-4 models
-               prompt=prompt,
-               max_tokens=150,  # Adjust the number of tokens based on your need
-               temperature=0.7  # Adjust creativity level
-           )
+           file = openai.files.create(
+                      file=open("nonprofitlist.pdf", "rb"),
+                      purpose='assistants'
+                    )
+           assistant = openai.beta.assistants.create(
+                      name="Homeless Stop Chatbot",
+                      description="You are a chatbot who converses with people that are trying to find a nonprofit which matches their goals to donate to or volunteer at. By cross-referencing the user's requirements with your data, you provide the user one or more nonprofits that would best suit them in a conversational format.",
+                      model="gpt-4o-mini",
+                      tools=[{"type": "file_search"}],
+                      tool_resources={
+                        "file_search": {
+                          "file_ids": [file.id]
+                        }
+                      }
+                    )
+           thread = openai.beta.threads.create(
+                  messages=[
+                    {
+                      "role": "user",
+                      "content": "Search for a nonprofit that matches the user's needs based off the nonprofitlist.pdf file.",
+                      "attachments": [
+                        {
+                          "file_id": file.id,
+                          "tools": [{"type": "file_search"}]
+                        }
+                      ]
+                    }
+                  ]
+                )
+           response = openai.beta.threads.runs.create(
+                thread_id=thread.id,
+                assistant_id=assistant.id,
+                model="gpt-4o-mini",
+                instructions="You are a chatbot who converses with people that are trying to find a nonprofit which matches their goals to donate to or volunteer at. By cross-referencing the user's requirements with your data, you provide the user one or more nonprofits that would best suit them in a conversational format.",
+                tools=[{"type": "file_search"}]
+            )
            return response.choices[0].text.strip()  # Extract and return the response
      except Exception as e:
            return f"Error: {e}"

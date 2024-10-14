@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 # from msilib.schema import Media
 import os
 import posixpath
-
+OPENAI_API_KEY = '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'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

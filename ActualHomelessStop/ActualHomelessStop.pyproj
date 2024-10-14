@@ -67,9 +67,12 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="app\media\images\info_not_found_error_page.jpg.jpg" />
+    <Content Include="app\service\nonprofitlist.csv" />
     <Content Include="app\templates\app\infonotprovided.html" />
     <Content Include="app\templates\app\nonprofitdetails.html" />
     <Content Include="app\templates\app\nonprofitlist.html" />
+    <Content Include="nonprofitlist.csv" />
+    <Content Include="nonprofitlist.pdf" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
