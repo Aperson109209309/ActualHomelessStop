@@ -71,15 +71,15 @@ def get_openai_response(prompt):
            messages = list(openai.beta.threads.messages.list(thread_id=thread.id, run_id=run.id))
 
            message_content = messages[0].content[0].text
-           annotations = message_content.annotations
-           citations = []
-           for index, annotation in enumerate(annotations):
-               message_content.value = message_content.value.replace(annotation.text, f"[{index}]")
-               if file_citation := getattr(annotation, "file_citation", None):
-                   cited_file = openai.files.retrieve(file_citation.file_id)
-                   citations.append(f"[{index}] {cited_file.filename}")
+           # annotations = message_content.annotations
+           # citations = []
+           # for index, annotation in enumerate(annotations):
+           #     message_content.value = message_content.value.replace(annotation.text, f"[{index}]")
+           #     if file_citation := getattr(annotation, "file_citation", None):
+           #         cited_file = openai.files.retrieve(file_citation.file_id)
+           #         citations.append(f"[{index}] {cited_file.filename}")
 
-           response_text = message_content.value + "\n".join(citations)
+           response_text = message_content.value # + "\n".join(citations)
            return response_text
 
            # response = openai.beta.threads.runs.create(
