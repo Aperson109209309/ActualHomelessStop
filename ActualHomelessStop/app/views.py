@@ -4,7 +4,7 @@ Definition of views.
 
 from datetime import datetime
 from sys import exception
-from telnetlib import STATUS
+# from telnetlib import STATUS
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpRequest
 from django.shortcuts import render
@@ -84,6 +84,7 @@ def nonprofitdetails(request, id):
             'object': object 
         }
     )
+
 def infonotprovided(request):
     """Renders the info not found page."""
     assert isinstance(request, HttpRequest)
@@ -96,15 +97,20 @@ def infonotprovided(request):
             'year':datetime.now().year,
         }
     )
+
 @csrf_exempt 
 def openai_view(request):
     if request.method == 'POST':
         try:
-            user_input = request.POST.get('user_input', '')
+            data = json.loads(request.body)
+            user_input = data.get('user_input', '')
             response_text = get_openai_response(user_input)
-        
-            return JsonResponse({"status":"success","message":response_text},STATUS=200)  
+            return JsonResponse(data=response_text, safe=False)
+            # return JsonResponse({"status":"success","message":response_text},status_code=200)  
         except Exception as e:
-            return JsonResponse({"status":"error","message":str(e)},STATUS=500)
+            print(e);
+            return JsonResponse(data=str(e), safe=False)
+            # return JsonResponse({"status":"error","message":str(e)},status_code=500)
      #  return render(request, 'openai_form.html')
-    return JsonResponse({"status":"error","message":"Invalid request"},STATUS=400)
+    return JsonResponse(data="Invalid request", safe=False)
+    # return JsonResponse({"status":"error","message":"Invalid request"},status_code=400)

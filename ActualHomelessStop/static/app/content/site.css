@@ -1831,3 +1831,7 @@ input[type="checkbox"].input-validation-error {
     margin-top: 5px;
 
 }
+
+.offcanvas.offcanvas-start {
+    width: 30%;
+}
