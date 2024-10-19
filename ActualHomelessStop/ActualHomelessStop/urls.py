@@ -3,12 +3,14 @@ Definition of urls for ActualHomelessStop.
 """
 
 from datetime import datetime
+from _pytest.monkeypatch import K
 from django.urls import path
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView
 from app import forms, views
 from django.conf import settings
 from django.conf.urls.static import static
+from app.views import openai_view
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -23,7 +25,7 @@ urlpatterns = [
              authentication_form=forms.BootstrapAuthenticationForm,
              extra_context=
              {
-                 'title': 'Log in',
+                 'title': 'Log In',
                  'year' : datetime.now().year,
              }
          ),
@@ -31,6 +33,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
     path('nonprofitdetails/infonotprovided', views.infonotprovided, name='infonotprovided'),
+    path('openai/', views.openai_view, name='openai_view')
 ]
 
 if settings.DEBUG:
