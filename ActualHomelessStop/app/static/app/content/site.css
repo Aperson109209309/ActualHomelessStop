@@ -1832,3 +1832,26 @@ input[type="checkbox"].input-validation-error {
     margin-top: 5px;
 
 }
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Green */
+.success {
+    border-color: #04AA6D;
+    color: green;
+}
+
+    .success:hover {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+.navbar>.container {
+    display: block;
+}
