@@ -35,8 +35,8 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'Contact',
-            'message':'Your contact page.',
+            'title':'Contact Us',
+            'message':'',
             'year':datetime.now().year,
         }
     )
@@ -48,8 +48,8 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'About',
-            'message':'Your application description page.',
+            'title':'About Us',
+            'message':'',
             'year':datetime.now().year,
         }
     )
