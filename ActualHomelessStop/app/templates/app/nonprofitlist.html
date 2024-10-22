@@ -11,6 +11,7 @@
             <th> Category</th>
             <th> City </th>
             <th> Zip Code </th>
+            <th> Rank </th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,9 @@
             </td>
             <td class="col-1">
                 {{ nonprofit.zip_code }}
+            </td>
+            <td class="col-1">
+                {{ nonprofit.rank }}
             </td>
         </tr>
         {% endfor %}

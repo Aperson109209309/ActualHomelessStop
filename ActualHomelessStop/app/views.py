@@ -57,7 +57,7 @@ def about(request):
 def nonprofitlist(request):
     """Renders the nonprofit list page."""
     assert isinstance(request, HttpRequest)
-    nonprofits = Nonprofit.objects.all()
+    nonprofits = Nonprofit.objects.all().order_by("rank")
     return render(
         request,
         'app/nonprofitlist.html',

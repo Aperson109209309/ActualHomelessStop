@@ -20,6 +20,7 @@ class Nonprofit(models.Model):
     donation_link = models.CharField(max_length=100, blank=True, null=True)
     volunteer_link = models.CharField(max_length=100, blank=True, null=True)
     newspaper_signup = models.CharField(max_length=100, blank=True, null=True)
+    rank = models.IntegerField(default=999, blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
