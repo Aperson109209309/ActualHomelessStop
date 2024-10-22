@@ -1795,9 +1795,18 @@ input[type="checkbox"].input-validation-error {
     flex-grow: 1;
 }
 
-.navbar-nav {
-    flex-direction: unset;
+@media (max-width: 575.98px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
 }
+
+@media (min-width: 575.98px) {
+    .navbar-nav {
+        flex-direction: row;
+    }
+}
+
 .message-bubble {
     max-width: 95%;
     padding: 10px 15px;

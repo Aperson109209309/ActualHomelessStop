@@ -4,40 +4,52 @@
 
 <h2>{{ title }}</h2>
 <h3>Nonprofits Near You (Greater Pheonix Area)</h3>
-<table id="nonprofitTable" class="table">
-    <thead>
-        <tr>
-            <th> Name </th>
-            <th> Category</th>
-            <th> City </th>
-            <th> Zip Code </th>
-            <th> Rank </th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for nonprofit in nonprofits %}
-        <tr>
-            <td class="col-1">
-                <a href="nonprofitdetails/{{nonprofit.id}}"> {{ nonprofit.name }} </a>
-            </td>
-            <td class="col-1">
-                {{ nonprofit.type }}
-            </td>
-            <td class="col-1">
-                {{ nonprofit.city }}
-            </td>
-            <td class="col-1">
-                {{ nonprofit.zip_code }}
-            </td>
-            <td class="col-1">
-                {{ nonprofit.rank }}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<!-- DataTables JS -->
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Access AI Helpbot</button>
+<div class="container-fluid">
+    <div class="row">
+        <table id="nonprofitTable" class="table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Category</th>
+                    <th> City </th>
+                    <th> Zip Code </th>
+                    <th> Rank </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for nonprofit in nonprofits %}
+                <tr>
+                    <td class="col-1">
+                        <a href="nonprofitdetails/{{nonprofit.id}}"> {{ nonprofit.name }} </a>
+                    </td>
+                    <td class="col-1">
+                        {{ nonprofit.type }}
+                    </td>
+                    <td class="col-1">
+                        {{ nonprofit.city }}
+                    </td>
+                    <td class="col-1">
+                        {{ nonprofit.zip_code }}
+                    </td>
+                    <td class="col-1">
+                        {{ nonprofit.rank }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- DataTables JS -->
+
+    </div>
+    <br />
+    <br />
+    <div class="row mt-3 mb-3 justify-content-center">
+        <div class="col-auto">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Access AI Helpbot</button>
+        </div>
+    </div>
+</div>
+
 
 <div class="offcanvas offcanvas-start" data-bs-theme="dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
