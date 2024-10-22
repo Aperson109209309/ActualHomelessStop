@@ -81,7 +81,7 @@ input[type="checkbox"].input-validation-error {
             .nav > li > a:hover,
             .nav > li > a:focus {
                 text-decoration: none;
-                background-color: #428bca;
+                background-color: #37474f;
             }
 
         .nav > li.disabled > a {
@@ -100,7 +100,7 @@ input[type="checkbox"].input-validation-error {
     .nav .open > a:hover,
     .nav .open > a:focus {
         background-color: #eeeeee;
-        border-color: #428bca;
+        border-color: #37474f;
     }
 
     .nav .nav-divider {
@@ -189,7 +189,7 @@ input[type="checkbox"].input-validation-error {
     .nav-pills > li.active > a:hover,
     .nav-pills > li.active > a:focus {
         color: #ffffff;
-        background-color: #428bca;
+        background-color: #37474f;
     }
 
 .nav-stacked > li {
@@ -264,8 +264,8 @@ input[type="checkbox"].input-validation-error {
 }
 
 .nav .caret {
-    border-top-color: #428bca;
-    border-bottom-color: #428bca;
+    border-top-color: #37474f;
+    border-bottom-color: #37474f;
 }
 
 .nav a:hover .caret {
@@ -993,7 +993,7 @@ input[type="checkbox"].input-validation-error {
     .nav .open > a:hover,
     .nav .open > a:focus {
         background-color: #eeeeee;
-        border-color: #428bca;
+        border-color: #37474f;
     }
 
     .nav .nav-divider {
@@ -1082,7 +1082,7 @@ input[type="checkbox"].input-validation-error {
     .nav-pills > li.active > a:hover,
     .nav-pills > li.active > a:focus {
         color: #ffffff;
-        background-color: #428bca;
+        background-color: #37474f;
     }
 
 .nav-stacked > li {
@@ -1157,8 +1157,8 @@ input[type="checkbox"].input-validation-error {
 }
 
 .nav .caret {
-    border-top-color: #428bca;
-    border-bottom-color: #428bca;
+    border-top-color: #37474f;
+    border-bottom-color: #37474f;
 }
 
 .nav a:hover .caret {
@@ -1668,7 +1668,7 @@ input[type="checkbox"].input-validation-error {
     }
 
 .navbar-inverse {
-    background-color: #428bca;
+    background-color: #37474f;
     border-color: #080808;
 }
 
