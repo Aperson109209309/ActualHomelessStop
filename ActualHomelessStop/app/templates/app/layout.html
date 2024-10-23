@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" class="navbar-brand">Homeless Stop</a>
+                <a href="/" class="navbar-brand"><img class="logo" src="{% static 'app/images/logo.png' %}" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -42,7 +42,7 @@
         {% block content %}{% endblock %}
         <hr />
         <footer>
-            <p> {{ year }} - Homeless Stop</p>
+            <p> {{ year }} - <span class="fs-5">Homeless Stop</span></p>
         </footer>
     </div>
 
@@ -55,7 +55,16 @@
     <script>
         $(document).ready(function() {
             $('#nonprofitTable').DataTable({
-                responsive: true
+                order: [[4, 'asc']],
+                columns: [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        visible: false
+                    }
+                ]
             });
         });
     </script>

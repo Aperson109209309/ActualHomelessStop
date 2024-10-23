@@ -51,14 +51,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
-    <Folder Include="app\media\images\" />
     <Folder Include="app\migrations\" />
-    <Folder Include="app\media\" />
     <Folder Include="app\service\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
     <Folder Include="app\static\app\content\" />
     <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\images\" />
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
@@ -66,8 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="app\media\images\info_not_found_error_page.jpg.jpg" />
     <Content Include="app\service\nonprofitlist.csv" />
+    <Content Include="app\static\app\images\logo.png" />
     <Content Include="app\templates\app\infonotprovided.html" />
     <Content Include="app\templates\app\nonprofitdetails.html" />
     <Content Include="app\templates\app\nonprofitlist.html" />

@@ -5,44 +5,61 @@
 <h1>{{ object.name }}</h1>
 
 <h3>Category: {{ object.type }}</h3>
+<hr class="solid" />
+<br />
+<div class="container-fluid table-responsive-sm">
+    <div class="row form-group">
+        <div class="col-3 col-md-2 fw-bold">Website:</div>
+        <div class="col-auto col-md-auto">
+            <a href="{{object.website}}"> {{ object.website }} </a>
+        </div>
+    </div>
+    <br />
+    <div class="row form-group">
+        <div class="col-3 col-md-2 fw-bold">Phone Number:</div>
+        <div class="col-auto col-md-auto">
+            {{ object.phone_number }}
+        </div>
+    </div>
+    <br />
+    <div class="row form-group">
+        <div class="col-3 col-md-2 fw-bold">E-mail:</div>
+        <div class="col-auto col-md-auto">
+            {{ object.email }}
+        </div>
+    </div>
+    <br />
+    <div class="row form-group">
+        <div class="col-3 col-md-2 fw-bold">Address:</div>
+        <div class="col-auto col-md-auto">
+            {{ object.address }} <br />{{ object.city }}, {{object.state }} {{ object.zip_code }}
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row form-group justify-content-around align-items-center">
+        <div class="col-auto">
+            <a class="btn btn-info mb-3" href="{{object.donation_link}}">
+                Donate To This Nonprofit
+            </a>
+        </div>
+        <div class="col-auto">
+            <a class="btn btn-info mb-3" href="{{object.volunteer_link}}">
+                Volunteer For This Nonprofit
+            </a>
+        </div>
+        <div class="col-auto">
+            <a class="btn btn-info mb-3" href="{{object.newspaper_signup}}">
+                Sign Up For This Nonprofit's Newsletter
+            </a>
+        </div>
+    </div>
+
+</div>
 
 
-<table id="nonprofitsdetailstable" class="table">
-    <thead>
-        <tr>
-            <th>Website</th>
-            <th>Phone Number</th>
-            <th>E-mail</th>
-            <th>Address</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="col-1">
-                <a href="{{object.website}}"> {{ object.website }} </a>
-            </td>
-            <td class="col-1">
-                <p>{{ object.phone_number }} </p>
-            </td>
-            <td class="col-1">
-                <p>{{ object.email }} </p>
-            </td>
-            <td class="col-1">
-                <p>{{ object.address }} <br />{{ object.city }}, {{object.state }} {{ object.zip_code }}</p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>Replace with Nonprofit Description once we add that</p>
-<a class="btn btn-info" href="{{object.donation_link}}">
-    Donate To This Nonprofit
-</a>
-<a class="btn btn-info" href="{{object.volunteer_link}}">
-    Volunteer For This Nonprofit
-</a>
-<a class="btn btn-info" href="{{object.newspaper_signup}}">
-    Sign Up For This Nonprofit's Newsletter
-</a>
+<!--<p>Replace with Nonprofit Description once we add that</p>-->
+
 
 
 
