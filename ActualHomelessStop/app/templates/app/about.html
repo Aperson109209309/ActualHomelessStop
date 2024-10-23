@@ -1,5 +1,5 @@
 {% extends "app/layout.html" %}
-
+{% load static %}
 {% block content %}
 
 <h2>{{ title }}</h2>
@@ -29,7 +29,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-auto">
-            <img class="img-fluid rounded" src="/app/static/app/images/aboutus_site_background.png" alt="About Us" >
+            <img class="img-fluid rounded" src="{% static 'app/images/aboutus_site_background.png' %}" alt="About Us">
         </div>
     </div>
 </div>
