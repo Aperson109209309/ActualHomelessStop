@@ -3,7 +3,7 @@ Definition of views.
 """
 
 from datetime import datetime
-from sys import exception
+# from sys import exception
 # from telnetlib import STATUS
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpRequest
