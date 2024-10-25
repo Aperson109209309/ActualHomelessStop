@@ -13,7 +13,17 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 # from msilib.schema import Media
 import os
 import posixpath
-OPENAI_API_KEY = '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'
+import environ
+
+env = environ.Env(
+    # Set default values and casting
+    DEBUG=(bool, False),
+    ALLOWED_HOSTS=[]
+)
+
+environ.Env.read_env()
+
+OPENAI_API_KEY = env("OPENAI_API_KEY")
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,12 +31,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e9078fc3-3ab5-45e7-8d7b-ad4061925331'
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
