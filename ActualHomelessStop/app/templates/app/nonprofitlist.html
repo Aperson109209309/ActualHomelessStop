@@ -146,6 +146,7 @@
         let resp = marked.parse(response);
         if(resp && resp !== response) {
             appendMessage(resp, 'received');
+            $('#captcha').html('');
         } else {
             $('#captcha').html(response);
             $('form').on('submit', function(e) {
