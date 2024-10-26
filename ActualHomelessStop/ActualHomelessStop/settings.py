@@ -18,6 +18,8 @@ import environ
 env = environ.Env(
     # Set default values and casting
     DEBUG=(bool, False),
+    CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND=(int, 3600),
+    CHATBOT_RATE_LIMIT=(int, 0),
     ALLOWED_HOSTS=[]
 )
 
@@ -40,6 +42,9 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
+
+CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND = env("CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND")
+CHATBOT_RATE_LIMIT = env("CHATBOT_RATE_LIMIT")
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS

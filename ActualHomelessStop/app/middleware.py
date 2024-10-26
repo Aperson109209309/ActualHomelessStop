@@ -1,11 +1,12 @@
 from django.core.cache import cache
-from django.http import JsonResponse
+# from django.http import JsonResponse
+from django.conf import settings
 from django.utils.deprecation import MiddlewareMixin
-import time
+# import time
 
 class RateLimitMiddleware(MiddlewareMixin):
-    RATE_LIMIT = 5  # requests
-    TIME_WINDOW = 3600  # 1 hour in seconds
+    RATE_LIMIT = getattr(settings, 'CHATBOT_RATE_LIMIT')  # requests
+    TIME_WINDOW = getattr(settings, 'CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND')  # 1 hour in seconds
 
     def process_request(self, request):
         if request.method == 'POST' and 'openai' in request.path:
