@@ -28,6 +28,8 @@ environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 
 OPENAI_API_KEY = env("OPENAI_API_KEY")
 
+RECAPTCHA_SECRET_KEY = env('RECAPTCHA_SECRET_KEY')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'app.middleware.RateLimitMiddleware',
 ]
 
 ROOT_URLCONF = 'ActualHomelessStop.urls'
@@ -110,6 +113,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
