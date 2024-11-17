@@ -33,8 +33,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
     path('nonprofitdetails/infonotprovided', views.infonotprovided, name='infonotprovided'),
-    path('openai/', views.openai_view, name='openai_view'),
-    path('event/', views.events, name='events')
+    path('openai/', views.openai_view, name='openai_view')
 ]
 
 if settings.DEBUG:
