@@ -1,0 +1,10 @@
+<div>
+    <h1>Please verify you are a human</h1>
+    <form action="{% url 'openai_view' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="user_input" value="{{user_input}}" />
+        <div class="g-recaptcha" data-sitekey="6LcSWWwqAAAAAI00FC7FOz8Zim8gRlbI0luKNOMQ" data-action="access_ai"></div>
+        <button type="submit">Verify</button>
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</div>
