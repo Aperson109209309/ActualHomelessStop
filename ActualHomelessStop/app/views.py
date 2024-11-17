@@ -145,3 +145,16 @@ def openai_view(request):
      #  return render(request, 'openai_form.html')
     return JsonResponse(data="Invalid request", safe=False)
     # return JsonResponse({"status":"error","message":"Invalid request"},status_code=400)
+
+def events(request):
+    """Renders the events page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/events.html',
+        {
+            'title':'Nonprofit Events',
+            'message':'Ongoing nonprofit events you can contribute to.',
+            'year':datetime.now().year,
+        }
+    )
