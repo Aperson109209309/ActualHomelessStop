@@ -34,7 +34,7 @@ class Event(models.Model):
     name = models.CharField(max_length=100)
     nonprofit_name = models.CharField(max_length=100)
     type = models.CharField(max_length=500, blank=True, null=True)
-    description = models.Charfield(max_length=1000, blank=True, null=True)
+    description = models.CharField(max_length=1000, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     city = models.CharField(max_length=100, blank=True, null=True)
     state = models.CharField(max_length=100, blank=True, null=True)
