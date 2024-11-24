@@ -158,3 +158,6 @@ def events(request):
             'year':datetime.now().year,
         }
     )
+
+def locate(request):
+    
