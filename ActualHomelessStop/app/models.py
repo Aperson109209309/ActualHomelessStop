@@ -29,6 +29,28 @@ class Nonprofit(models.Model):
     def __str__(self):
         return f"{self.name}"
 
+class Event(models.Model):
+    # Define fields for the Donor model
+    name = models.CharField(max_length=100)
+    nonprofit_name = models.CharField(max_length=100)
+    type = models.CharField(max_length=500, blank=True, null=True)
+    description = models.Charfield(max_length=1000, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    city = models.CharField(max_length=100, blank=True, null=True)
+    state = models.CharField(max_length=100, blank=True, null=True)
+    zip_code = models.CharField(max_length=10, blank=True, null=True)
+    country = models.CharField(max_length=100, blank=True, null=True)
+    website = models.CharField(max_length=100, blank=True, null=True)
+    host_website = models.CharField(max_length=200, blank=True, null=True)
+    rank = models.IntegerField(default=999, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    # String representation of the Donor model
+
+    def __str__(self):
+        return f"{self.name}"
+
 
 
 
