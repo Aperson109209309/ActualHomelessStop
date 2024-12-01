@@ -1,0 +1,45 @@
+{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>Nonprofit Events Near You (Greater Pheonix Area)</h3>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <table id="eventTable" class="table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th> Event </th>
+                    <th> Category</th>
+                    <th> City </th>
+                    <th> Zip Code </th>
+                    <th> Rank </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td class="col-1">
+                        <a> {{ event.name }} </a>
+                    </td>
+                    <td class="col-1">
+                        {{ event.type }}
+                    </td>
+                    <td class="col-1">
+                        {{ event.address }}
+                    </td>
+                    <td class="col-1">
+                        {{ event.zip_code }}
+                    </td>
+                    <td class="col-1">
+                        {{ event.city }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+        {% endblock %}

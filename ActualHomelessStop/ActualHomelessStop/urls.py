@@ -34,7 +34,7 @@ urlpatterns = [
     path('admin', admin.site.urls),
     path('nonprofitdetails/infonotprovided', views.infonotprovided, name='infonotprovided'),
     path('openai/', views.openai_view, name='openai_view'),
-    path('events/', views.events, name='events')
+    path('eventslist/', views.eventslist, name='eventslist')
 
 ]
 

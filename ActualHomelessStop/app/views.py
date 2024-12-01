@@ -19,6 +19,7 @@ import requests
 from django.conf import settings
 
 from app.models import Nonprofit
+from app.models import Event
 
 def home(request):
     """Renders the home page."""
@@ -146,18 +147,20 @@ def openai_view(request):
     return JsonResponse(data="Invalid request", safe=False)
     # return JsonResponse({"status":"error","message":"Invalid request"},status_code=400)
 
-def events(request):
-    """Renders the events page."""
+def eventslist(request):
+    """Renders the eventslist page."""
     assert isinstance(request, HttpRequest)
+    events = Event.objects.all()
     return render(
         request,
-        'app/events.html',
+        'app/eventslist.html',
         {
             'title':'Nonprofit Events',
             'message':'Ongoing nonprofit events you can contribute to.',
             'year':datetime.now().year,
+            'events':events,
         }
     )
 
-def locate(request):
+#def locate(request):
     
