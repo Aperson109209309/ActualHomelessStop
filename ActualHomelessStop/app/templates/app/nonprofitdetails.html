@@ -11,7 +11,7 @@
     <div class="row form-group">
         <div class="col-3 col-md-2 fw-bold">Website:</div>
         <div class="col-auto col-md-auto">
-            <a href="{{object.website}}"> {{ object.website }} </a>
+            <a href="{{object.website}}" target="_blank"> {{ object.website }} </a>
         </div>
     </div>
     <br />
@@ -39,22 +39,17 @@
     <br />
     <div class="row form-group justify-content-around align-items-center">
         <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.}}">
-                Nonprofit Events Map.
-            </a>
-        </div>
-        <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.donation_link}}">
+            <a class="btn btn-info mb-3" href="{{object.donation_link}}" target="_blank">
                 Donate To This Nonprofit
             </a>
         </div>
         <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.volunteer_link}}">
+            <a class="btn btn-info mb-3" href="{{object.volunteer_link}}" target="_blank">
                 Volunteer For This Nonprofit
             </a>
         </div>
         <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.newspaper_signup}}">
+            <a class="btn btn-info mb-3" href="{{object.newspaper_signup}}" target="_blank">
                 Sign Up For This Nonprofit's Newsletter
             </a>
         </div>
