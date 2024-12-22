@@ -16,16 +16,17 @@
     </div>
     <br />
     <div class="row form-group">
-        <div class="col-3 col-md-2 fw-bold">Phone Number:</div>
+        <div class="col-3 col-md-2 fw-bold">Host Website:</div>
         <div class="col-auto col-md-auto">
-            {{ object.phone_number }}
+            {{ object.host_website }}
         </div>
     </div>
     <br />
     <div class="row form-group">
-        <div class="col-3 col-md-2 fw-bold">E-mail:</div>
+        <div class="col-3 col-md-2 fw-bold">Description:</div>
         <div class="col-auto col-md-auto">
-            {{ object.email }}
+             {{ object.type }}
+             {{object.description}}
         </div>
     </div>
     <br />
@@ -43,30 +44,8 @@
                 Nonprofit Events Map.
             </a>
         </div>
-        <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.donation_link}}">
-                Donate To This Nonprofit
-            </a>
-        </div>
-        <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.volunteer_link}}">
-                Volunteer For This Nonprofit
-            </a>
-        </div>
-        <div class="col-auto">
-            <a class="btn btn-info mb-3" href="{{object.newspaper_signup}}">
-                Sign Up For This Nonprofit's Newsletter
-            </a>
-        </div>
     </div>
 
 </div>
 
-
-<!--<p>Replace with Nonprofit Description once we add that</p>-->
-
-
-
-
-<!-- add links to donate/volunteer -->
 {% endblock %}

@@ -72,6 +72,7 @@
     <Content Include="app\templates\app\infonotprovided.html" />
     <Content Include="app\templates\app\nonprofitdetails.html" />
     <Content Include="app\templates\app\nonprofitlist.html" />
+    <Content Include="app\templates\app\eventdetails.html" />
     <Content Include="nonprofitlist.csv" />
     <Content Include="nonprofitlist.pdf" />
     <Content Include="requirements.txt" />

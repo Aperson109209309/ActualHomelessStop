@@ -162,5 +162,20 @@ def eventslist(request):
         }
     )
 
+def eventdetails(request, id):
+    """Renders the event details page."""
+    assert isinstance(request, HttpRequest)
+    # nonprofits = Nonprofit.objects.all()
+    object = get_object_or_404(Event,id = id)
+    return render(
+        request,
+        'app/eventdetails.html',
+        {
+            'title':'Event Details (CHANGE TO EVENT NAME)',
+            'message':'Your application description page. (CHANGE TO NONPROFIT CATEGORY',
+            'year':datetime.now().year,
+            'object': object 
+        }
+    )
+
 #def locate(request):
-    
