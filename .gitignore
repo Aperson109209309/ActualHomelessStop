@@ -365,3 +365,4 @@ FodyWeavers.xsd
 AcutualHomelessStop/env
 /ActualHomelessStop/.env
 /ActualHomelessStop/.env
+/ActualHomelessStop/db.sqlite3
