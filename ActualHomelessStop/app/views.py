@@ -178,4 +178,5 @@ def eventdetails(request, id):
         }
     )
 
+
 #def locate(request):

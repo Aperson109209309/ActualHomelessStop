@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'app',
     # Add your apps here to enable them
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', 
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
 
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
-MIDDLEWARE = [
+MIDDLEWARE = [   
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
