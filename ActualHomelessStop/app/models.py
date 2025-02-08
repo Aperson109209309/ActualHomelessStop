@@ -4,6 +4,8 @@ Definition of models.
 #appname/models.py
 
 from django.db import models
+from django.db import models
+from django.contrib.auth.models import User
 
 class Nonprofit(models.Model):
     # Define fields for the Donor model
@@ -50,7 +52,13 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+    location = models.CharField(max_length=100, blank=True)
 
+    def str(self):
+        return self.user.username
 
 
 

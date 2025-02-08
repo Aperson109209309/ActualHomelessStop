@@ -11,6 +11,8 @@ from app import forms, views
 from django.conf import settings
 from django.conf.urls.static import static
 from app.views import openai_view
+from django.urls import path
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -36,6 +38,13 @@ urlpatterns = [
     path('openai/', views.openai_view, name='openai_view'),
     path('eventslist/', views.eventslist, name='eventslist'),
     path('eventdetails/<int:id>', views.eventdetails, name='eventdetails'),
+   # path('login/', auth_views.LoginView.as_view(), name='login'),
+   # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
+    path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
+    path('password_change_done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+    path('register/', views.register, name='register'),
 
 ]
 

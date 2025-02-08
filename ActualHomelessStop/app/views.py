@@ -20,6 +20,9 @@ from django.conf import settings
 
 from app.models import Nonprofit
 from app.models import Event
+from django.shortcuts import render, redirect
+from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     """Renders the home page."""
@@ -177,6 +180,22 @@ def eventdetails(request, id):
             'object': object 
         }
     )
+
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
+
 
 
 #def locate(request):

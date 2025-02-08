@@ -38,6 +38,9 @@
     <Compile Include="app\forms.py" />
     <Compile Include="app\migrations\0001_initial.py" />
     <Compile Include="app\models.py" />
+    <Compile Include="app\signals.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\service\openai_service.py" />
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
@@ -73,10 +76,10 @@
     <Content Include="app\templates\app\nonprofitdetails.html" />
     <Content Include="app\templates\app\nonprofitlist.html" />
     <Content Include="app\templates\app\eventdetails.html" />
+    <Content Include="db.sqlite3" />
     <Content Include="nonprofitlist.csv" />
     <Content Include="nonprofitlist.pdf" />
     <Content Include="requirements.txt" />
-    <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
     <Content Include="app\static\app\content\site.css" />
