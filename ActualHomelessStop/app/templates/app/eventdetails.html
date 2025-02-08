@@ -9,15 +9,16 @@
 <br />
 <div class="container-fluid table-responsive-sm">
     <div class="row form-group">
-        <div class="col-3 col-md-2 fw-bold">Website:</div>
-        <div class="col-auto col-md-auto">
-            <a href="{{object.website}}" target="_blank"> {{ object.website }} </a>
-        </div>
-    </div>
-    <div class="row form-group">
         <div class="col-3 col-md-2 fw-bold">Date:</div>
         <div class="col-auto col-md-auto">
             {{ object.starts }} to {{ object.ends }}
+        </div>
+    </div>
+    <br />
+    <div class="row form-group">
+        <div class="col-3 col-md-2 fw-bold">Website:</div>
+        <div class="col-auto col-md-auto">
+            <a href="{{object.website}}" target="_blank"> {{ object.website }} </a>
         </div>
     </div>
     <br />
