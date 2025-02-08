@@ -3,6 +3,7 @@ Definition of models.
 """
 #appname/models.py
 
+from pickle import FALSE
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
@@ -45,6 +46,8 @@ class Event(models.Model):
     website = models.CharField(max_length=100, blank=True, null=True)
     host_website = models.CharField(max_length=200, blank=True, null=True)
     rank = models.IntegerField(default=999, blank=False, null=False)
+    starts = models.CharField(max_length = 100, blank=False, null=True)
+    ends = models.CharField(max_length = 100, blank=False, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
