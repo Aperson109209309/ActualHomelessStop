@@ -36,6 +36,8 @@ class Event(models.Model):
     # Define fields for the Donor model
     name = models.CharField(max_length=100)
     nonprofit_name = models.CharField(max_length=100)
+    starts = models.CharField(max_length = 100, blank=False, null=True)
+    ends = models.CharField(max_length = 100, blank=False, null=True)
     type = models.CharField(max_length=500, blank=True, null=True)
     description = models.CharField(max_length=1000, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
@@ -46,8 +48,6 @@ class Event(models.Model):
     website = models.CharField(max_length=100, blank=True, null=True)
     host_website = models.CharField(max_length=200, blank=True, null=True)
     rank = models.IntegerField(default=999, blank=False, null=False)
-    starts = models.CharField(max_length = 100, blank=False, null=True)
-    ends = models.CharField(max_length = 100, blank=False, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
