@@ -56,7 +56,7 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'About Us',
+            'title':'Our Story',
             'message':'Our application description page.',
             'year':datetime.now().year,
         }
